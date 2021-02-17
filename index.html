@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript">
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("newPortalUser", {
+		title:{
+			text: ""              
+		}, axisY:{ labelFontFamily: "Montserrat", labelFontSize: 14, labelFontWeight: "600", lineThickness:0,
+		gridDashType: "dash",
+		gridColor: "#cfd3d8",includeZero: true,
+   interval: 50,
+   intervalType: "number",
+				  lineThickness: 0,
+    gridThickness: 1,
+    tickThickness: 0
+ },
+		axisX:{
+       title: "",
+       tickLength: 0,
+       margin:0,
+       lineThickness:0,
+    tickThickness: 0,
+       valueFormatString:" " //comment this to show numeric values
+      },
+data: [              
+		{type: "column",
+		indexLabel: "{y}", indexLabelFontSize: 16,
+		indexLabelFontColor: "#000",
+		indexLabelPlacement: "inside",
+		
+			dataPoints: [
+				{ label: "",  color: "green", y: 132  },
+		]
+		},
+	{type: "column",
+		indexLabel: "{y}", indexLabelFontSize: 16,
+		indexLabelFontColor: "#000",
+		indexLabelPlacement: "inside",
+		
+			dataPoints: [
+				{ label: "", color: "orange", y: 100  },
+		]
+		}
+		]
+	});
+chart.render();
+	
+	var chart = new CanvasJS.Chart("uniqueBroker", {
+		title:{
+			text: ""              
+		}, axisY:{ labelFontFamily: "Montserrat", labelFontSize: 14, labelFontWeight: "600", lineThickness:0,		
+		gridDashType: "dash",
+		gridColor: "#cfd3d8",includeZero: true,
+   interval: 200,
+   intervalType: "number",  lineThickness: 0,
+    gridThickness: 1,
+    tickThickness: 0
+ },axisX:{
+       title: "",
+       tickLength: 0,
+       margin:0,tickThickness: 0,
+       lineThickness:0,
+       valueFormatString:" " //comment this to show numeric values
+      },
+data: [              
+		{type: "column",
+		indexLabel: "{y}",indexLabelFontSize: 16,
+		indexLabelFontColor: "#000",
+		indexLabelPlacement: "inside",legendText: "Actual",legendMarkerColor: "#EEC004",
+		showInLegend: true, 
+			dataPoints: [
+				{ label: "",  color: "#EEC004", y: 381  },
+		]
+		},
+	{type: "column",
+		indexLabel: "{y}",
+		indexLabelFontColor: "#000",indexLabelFontSize: 16,
+		indexLabelPlacement: "inside",legendText: "Target",legendMarkerColor: "orange",
+		showInLegend: true, 
+			dataPoints: [
+				{ label: "", color: "orange", y: 400  },
+		]
+		}
+		]
+	});
+chart.render();
+}
+</script>
+</head>
+<body>
+<section class="chart-row-1">
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-6">
+        <div class="bar-chart">
+          <div class="row">
+            <div class="col-md-8">
+              <h4>New Portal Users</h4>
+              <h6>Actual vs Target</h6>
+            </div>
+            <div class="col-md-4">
+              <p class="actual-new color-label"><img src="images/green.png" />Actual</p>
+              <p class="target-new color-label"><img src="images/orange.png" />Target</p>
+            </div>
+          </div>
+          <div id="newPortalUser" style="height: 180px;width: 88%" class="chart-canvas"></div>
+        </div>
+      </div>
+      <div class=" col-md-6">
+        <div class="bar-chart">
+          <h4>Unique Broker Inspection</h4>
+          <h6>Actual vs Target</h6>
+          <div id="uniqueBroker" style="height: 180px; width: 88%" class="chart-canvas"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="chart-row-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="bar-chart">
+          <div class="gauge-details">
+            <div class="gauge-info">
+              <h1>New Inspections</h1>
+              <p>Actual Target</p>
+            </div>
+            <div class="gauge_number"></div>
+            <div class="gauge newInspection">
+              <div class="gauge__body">
+                <div class="gauge__fill"></div>
+                <div class="gauge__cover"></div>
+              </div>
+            </div>
+            <div class="gauge-parameters">
+              <div class="gauge-start gauge-full">
+                <p>0</p>
+              </div>
+              <div class="gauge-end gauge-full">
+                <p>100</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		<div class="col-md-4">
+        <div class="bar-chart">
+          <div class="gauge-details">
+            <div class="gauge-info">
+              <h1>New Inspections</h1>
+              <p>Actual Target</p>
+            </div>
+            <div class="gauge_number"></div>
+            <div class="gauge billedInspection">
+              <div class="gauge__body">
+                <div class="gauge__fill"></div>
+                <div class="gauge__cover"></div>
+              </div>
+            </div>
+            <div class="gauge-parameters">
+              <div class="gauge-start gauge-full">
+                <p>0</p>
+              </div>
+              <div class="gauge-end gauge-full">
+                <p>100</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		<div class="col-md-4">
+        <div class="bar-chart">
+          <div class="gauge-details">
+            <div class="gauge-info">
+              <h1>New Inspections</h1>
+              <p>Actual Target</p>
+            </div>
+            <div class="gauge_number"></div>
+            <div class="gauge supportTicket">
+              <div class="gauge__body">
+                <div class="gauge__fill"></div>
+                <div class="gauge__cover"></div>
+              </div>
+            </div>
+            <div class="gauge-parameters">
+              <div class="gauge-start gauge-full">
+                <p>0</p>
+              </div>
+              <div class="gauge-end gauge-full">
+                <p>100</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="js/canvasjs.min.js"></script> 
+<script src="js/script.js"></script> 
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</body>
+</html>
